@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="green_700">#2E7D32</color>
+    <color name="green_800">#1B5E20</color>
+    <color name="green_100">#C8E6C9</color>
+    <color name="green_50">#E8F5E9</color>
+    <color name="orange_600">#F57C00</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="background">#FAFAF7</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#1C1B1F</color>
+    <color name="text_secondary">#5F6368</color>
+
+    <color name="status_good">#2E7D32</color>
+    <color name="status_warn">#B26A00</color>
+    <color name="status_bad">#C62828</color>
+    <color name="banner_bg">#FFF3E0</color>
 </resources>
