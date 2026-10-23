@@ -71,5 +71,13 @@ public enum Unit {
         return ALIASES.get(key);
     }
 
-
+    /** Symbols shown in the unit drop-down on the Add/Edit screen. */
+    public static String[] symbols() {
+        Unit[] values = values();
+        String[] out = new String[values.length];
+        for (int i = 0; i < values.length; i++) {
+            out[i] = values[i].symbol;
+        }
+        return out;
+    }
 }

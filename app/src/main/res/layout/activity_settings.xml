@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Screen 5: Settings -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    tools:context=".UI.SettingsActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar.SmartPantry"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/title_settings" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Expiry alerts -->
+            <TextView
+                style="@style/SectionHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_alerts_heading" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switch_expiry_alerts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/settings_alerts" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minHeight="48dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:labelFor="@id/spinner_expiry_days"
+                    android:text="@string/settings_alerts_days"
+                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+                <Spinner
+                    android:id="@+id/spinner_expiry_days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp" />
+            </LinearLayout>
+
+            <!-- Units -->
+            <TextView
+                style="@style/SectionHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/settings_units_heading" />
+
+            <RadioGroup
+                android:id="@+id/radio_units"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_metric"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="@string/settings_metric" />
+
+                <RadioButton
+                    android:id="@+id/radio_imperial"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="@string/settings_imperial" />
+            </RadioGroup>
+
+            <!-- Matching -->
+            <TextView
+                style="@style/SectionHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/settings_matching_heading" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switch_ignore_expired"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/settings_ignore_expired" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switch_water"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/settings_water" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switch_almost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/settings_almost" />
+
+            <!-- Data -->
+            <TextView
+                style="@style/SectionHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/settings_data_heading" />
+
+            <TextView
+                android:id="@+id/text_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/text_secondary"
+                tools:text="Stored locally on this device." />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_clear_pantry"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/settings_clear_pantry"
+                android:textColor="@color/status_bad"
+                app:icon="@drawable/ic_delete"
+                app:iconTint="@color/status_bad"
+                app:strokeColor="@color/status_bad" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
